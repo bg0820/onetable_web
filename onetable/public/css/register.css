@@ -1,0 +1,39 @@
+.content {
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+
+.content .splitLeft {
+    flex: 1;
+    background: #CAE8E2;
+
+}
+
+.content .splitRight {
+    flex: 1;
+}
+
+.input_margin {
+    margin-bottom: 10px;
+}
+
+.btn_margin {
+    margin-top: 30px;
+}
+
+.link_area {
+    margin-top:15px;
+}
+
+.container a {
+    color: #74cebd;
+}
+
+
+.inputArea {
+    display:inline-block;
+    width: 100%;
+}

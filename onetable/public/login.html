@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/login.css" rel="stylesheet" type="text/css" />
+        <link href="./css/common.css" rel="stylesheet" type="text/css" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+        <script src="./js/login.js"></script>
+
+        <title>한상 차림</title>
+    </head>
+    <body>
+        <div class='content'>
+            <div class="splitLeft">
+                <div class="center">
+                    <img src="img/logo.png" />
+                </div>
+            </div>
+            <div class="splitRight">
+                <div class="center">
+                    <div class="container">
+                        <p class="item_title">아이디</p>
+                        <input class="form-control input_margin" id='id' type="text" placeholder="아이디를 입력해주세요." >
+                        <p class="item_title">비밀번호</p>
+                        <input class="form-control" id='pw' type="password" placeholder="비밀번호를 입력해주세요.">
+                    
+                        <div class="btn btn_margin" jControll='loginBtn'>
+                            로그인
+                        </div>
+                        <p class="errorMsg centerMsg " id='loginError'></p>
+
+
+                        <div class="link_area">
+                            <a href="/idpwFind.html" class="left">
+                                아이디 / 비밀번호 찾기
+                            </a>
+                            <a href="/register.html" class="right">
+                                회원가입
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,175 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+
+* {
+	font-family: 'Spoqa Han Sans', 'Sans-serif';
+	font-weight: 400;
+	font-size: 14px;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #3D4354;
+}
+
+html, body {
+	background: white;
+	width: 100%;
+    height:100%;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* 메인 중앙 정렬 */
+.center
+{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.center .container
+{
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	width: 350px;
+	max-width: 350px;
+}
+
+.flexcenter {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+
+.flexcenter_align {
+	display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+
+.form-control {
+	background:white;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 10px;
+	font-size: 0.9rem;
+	-webkit-appearance: none;
+	border-radius: 0px;
+}
+
+.form-control.small {
+	height: 40px;
+	line-height: 40px;
+}
+
+.form-control::placeholder {
+	color: #ccc;
+}
+
+.form-control:focus {
+	outline: none;
+	border: 1px solid #74cebd;
+}
+
+.item_title {
+    color: #949494;
+    font-size: 0.9rem;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.btn {
+    border: 1px solid #74cebd;
+    color: #74cebd;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.15rem;
+	cursor: pointer;
+	text-align: center;
+}
+.btn:hover {
+    background: #74cebd;
+    color: #fff;
+}
+
+.btn.medium {
+	height: 45px;
+	line-height: 45px;
+	width: 100px;
+}
+.btn.small {
+	height: 40px;
+	line-height: 40px;
+	width: 120px;
+	text-align: center;
+}
+
+
+.backBtn {
+	position: absolute;
+	top:20px;
+	left: 20px;
+	border: solid #fff;
+	border-width: 0px 0px 4px 4px;
+	transform: rotate(45deg);
+	width:20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.errorMsg {
+    float: left;
+    color: #FF4444;
+    padding-left: 5px;
+    margin-top:3px;
+    font-size: 0.9rem;
+}
+.centerMsg {
+    float: none;
+}
+
+.errorMsg.success {
+   color: #6cc070;
+}
+
