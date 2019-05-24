@@ -18,7 +18,23 @@ window.onclick = function(event) {
     $('#contextMenu').hide();
 
     switch (jControll) {
+        case 'navBar' :
+            $("li[jControll='navBar']").removeClass('select');
+            jEventTarget.addClass('select');
 
+
+            if(jData == 'search')
+            {
+                serverRequest("./ajax-page/recipeSearch.html", "GET", {}, "html").then(function(result) {
+                    document.getElementById('subContent').innerHTML = result;
+                });
+            } else if(jData == 'enroll') {
+                serverRequest("./ajax-page/recipeEnroll.html", "GET", {}, "html").then(function(result) {
+                    document.getElementById('subContent').innerHTML = result;
+                });
+            }
+
+            break;
         case 'menuLink':
             menuLink(jData);
 

@@ -1,0 +1,23 @@
+
+.navBar {
+    list-style: none;
+    height: 35px;
+}
+
+.navBar::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.navBar li {
+    float: left;
+    color: #ccc;
+    font-size: 1.6rem;
+    margin-right: 20px;
+}
+
+.navBar li.select {
+    color: #74cebd;
+    font-weight: bold;
+}
