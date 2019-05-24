@@ -22,51 +22,6 @@ window.onclick = function(event) {
         case 'menuLink':
             menuLink(jData);
 
-            switch(jData) {
-                case 'home' :
-                break;
-                case 'ingredient' :
-                break;
-                case 'recipe':
-                    serverRequest("http://1.240.181.56:8080/recipe/search/all", "GET", {
-                        startNum: 0,
-                        itemNum: 30
-                    }, 'json').then(function(result) {
-                        for(var i = 0 ; i < result.data.obj.length; i++)
-                        {
-                            var data = result.data.obj[i];
-                            
-                            var priceStr = data.price == null ? '가격 미제공' : addComma(data.price) + "원";
-                            var recipeDate = getFormdate(new Date(data.recipeDate), 'min');
-                            var listItemHTML = "";
-                            listItemHTML += "<li>";
-                            listItemHTML += "<div class='listItem'>";
-                            listItemHTML += "<div class='listItemHeader'>"; 
-                            listItemHTML += "<img src='img/user.svg' width='32px' height='32px'/>";
-                            listItemHTML += "<p>" + data.nickName + "</p>";
-                            listItemHTML += "</div>";
-                            listItemHTML += "<div class='listItemContent'>";
-                            listItemHTML += "<div class='imgWrap'>";
-                            listItemHTML += "<img src='" + data.recipeImg + "'>";
-                            listItemHTML += "</div>";
-                            listItemHTML += "<div class='info'>";
-                            listItemHTML += "<p class='title'>" + data.name + "</p>";
-                            listItemHTML += "<div class='footerInfo'>";
-                            listItemHTML += "<p class='price'>" + priceStr + "</p>";
-                            listItemHTML += "<p class='createDate'>" +recipeDate + "</p>";
-                            listItemHTML += "</div>";
-                            listItemHTML += "</div>";
-                            listItemHTML += "</div>";
-                            listItemHTML += "<div class='wrapper'></div>";
-                            listItemHTML += "</div>";
-                            listItemHTML += "</li>";
-
-                            $('#listArea').append(listItemHTML);
-                        }
-                    });
-                    
-                break;
-            }
             break;
         case 'contextMenu':
             if(contextVisible)
@@ -83,72 +38,54 @@ window.onclick = function(event) {
             break;
     }
 }
+/*
+function splits(l) {
+    var resu = [];
+
+    console.log(l);
+    if(l.length == 0)
+        return null;
+
+    for(var i = 0 ; i < l.length; i++)
+    {
+        var item = l[i];
+
+        var itemSpl = item.N.split('/');
+
+        if(itemSpl.length > 0)
+        {
+            for(var f = 0 ; f < itemSpl.length; f++)
+                resu.push({'C': item.C, 'N': itemSpl[f]});
+        }
+        else
+            resu.push({'C': item.C, 'N': item.N});
+
+        var lItem = splits(item.L);
+        
+        if(lItem != null)
+        {
+            for(var j = 0 ; j < lItem.length; j++)
+            {
+                resu.push(lItem[j]);
+            }
+        }
+            
+    }
+
+    return resu;
+}*/
 
 $(document).ready(function(){
-    serverRequest("/e.json", "GET", {}, "json").then(function(result) {
-        console.log(result);
-        var cnt = 0;
-        for(var i = 0 ; i < result.L.length; i++)
-        {
-            var l = result.L[i];
-
-            for(var j = 0 ; j < l.L.length; j++)
-            {
-                var ll = l.L[j];
-
-                for(var k = 0 ;  k < ll.L.length; k++)
-                {
-                    var kl = ll.L[k];
-
-                    if(kl.L.length > 0)
-                    {
-                        for(var f = 0 ; f < kl.L.length; f++)
-                        {
-                            var ff = kl.L[f];
-
-                            var spl = ff.N.split('/');
-
-                            if(spl.length > 0)
-                            {
-                                for(var fff = 0 ; fff < spl.length; fff++)
-                                {
-                                    console.log(ff.C + "," + spl[fff]);
-                                }
-                            }
-                            else
-                            {
-                                console.log(ff.C  + "," + ff.C);
-                            }
-
-                        }
-                    }
-                    else {
-                        var spl = kl.N.split('/');
-
-                        if(spl.length > 0)
-                        {
-                            for(var f = 0 ; f < spl.length; f++)
-                            {
-                                console.log(kl.C  + ","+spl[f]);
-                            }
-                        }
-                        else
-                        {
-                            console.log(kl.C + "," +kl.C);
-                        }
-                    }
-                }
-                
-            }
-
-
-        }
-    });
+    //serverRequest("/e.json", "GET", {}, "json").then(function(result) {
+       //console.log(splits(result.L));
+    //});
 });
 
-function addComma(num) {
-    var regexp = /\B(?=(\d{3})+(?!\d))/g;
-    return num.toString().replace(regexp, ',');
+function menuLink(type)
+{
+    menuSelect(type);
+
+    $('#content').load( './ajax-page/' + type + '.html' );    
 }
 
 function menuSelect(type)
@@ -164,36 +101,6 @@ function menuSelect(type)
             break;
         }
     }
-    
-}
-
-
-function getFormdate(date, type)
-{
-	var year = date.getFullYear();
-	var month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
-	var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-
-	var hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
-	var min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
-	var sec = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
-
-	if(type =='full')
-	    return year + '.' + month + '.' + day + ' ' + hour + ':' + min + ':' + sec;
-	else if(type == 'min')
-		return year + '.' + month + '.' + day;
-}
-
-
-
-function menuLink(type)
-{
-    menuSelect(type);
-
-   serverRequest('./ajax-page/' + type + '.html', 'GET', {}, 'html').then(function(result) {
-        document.getElementById('content').innerHTML = result;
-    });
-    
 }
 
 
