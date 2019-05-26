@@ -1,5 +1,5 @@
 .searchArea.ingredient {
-    margin: 0px 0px 20px 0px;
+    margin: 50px 0px 20px 0px;
 }
 
 .searchArea input {
@@ -8,7 +8,7 @@
 
 .listItem {
     position: relative;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #74cebd;
     background: #fff;
     overflow: hidden;
 }
@@ -133,7 +133,7 @@ ul.listArea::after {
 }
 
 .interaction p {
-   
+
     font-size: 0.9rem;
     color: #747474;
 }
