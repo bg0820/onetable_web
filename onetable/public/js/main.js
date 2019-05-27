@@ -64,10 +64,8 @@ function modalClose()
 	modal.style.display = 'none';
 }
 
-function getPopularRecipe() {
+async function getPopularRecipe() {
     let resp = await serverRequest('http://1.240.181.56:8080/home/popular/recipe', "GET", {}, "json");
-
-    
 
     for(var  i = 0 ;  i< resp.data.length; i++)
     {
@@ -90,7 +88,7 @@ function getPopularRecipe() {
         html += "<span class='I_BLANK_LIKE select'></span>";
         html += "<p>3명</p>";
         html += "</div>";
-        html += "<p class='title'>알리오올리오</p>";
+        html += "<p class='title'>" + item.name + "</p>";
         html += "<div class='footerInfo'>";
         html += "<p class='price'>92,680원</p>";
         html += "<p class='createDate'>2019.05.17</p>";
