@@ -1,0 +1,7 @@
+.splitTop
+{
+  flex: 2;
+  min-width: 180px;
+  max-width: 230px;
+  background: #98cfc4;
+}

@@ -5,26 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./css/main.css" rel="stylesheet" type="text/css" />
         <link href="./css/common.css" rel="stylesheet" type="text/css" />
-        <link href="./css/modal.css" rel="stylesheet" type="text/css" />
+        <link href="./css/recipe.css" rel="stylesheet" type="text/css" />
         <link href="./css/ingredient.css" rel="stylesheet" type="text/css" />
+        <link href="./css/onetable.css" rel="stylesheet" type="text/css" />
 
         <script src="./js/jquery-3.4.1.min.js"></script>
+
+
         <script src="./js/main.js"></script>
-        
+
         <title>한상 차림</title>
     </head>
     <body>
-        <div class="modalBack flexcenter" id="modalBack">
-            <div class="modal" id="modal"></div>
-        </div>
-
         <div class='content'>
             <div class="splitLeft">
                 <ul>
-                    <li class="select" jControll='menuLink' jData="home"><span class="I_HOME"></span><p>홈</p></li>
+                    <li jControll='menuLink' jData="home"><span class="I_HOME"></span><p>홈</p></li>
                     <li jControll='menuLink' jData="ingredient"><span class="I_INGREDIENT"></span><p>재료 가격</p></li>
                     <li jControll='menuLink' jData="recipe"><span class="I_RECIPE"></span><p>레시피</p></li>
-                    <li jControll='menuLink' jData="onetable"><span class="I_ONETABLE"></span><p>한상차림</p></li>
+                    <li class="select" jControll='menuLink' jData="onetable"><span class="I_ONETABLE"></span><p>한상차림</p></li>
                     <li jControll='menuLink' jData="ranking"><span class="I_RANKING"></span><p>랭킹</p></li>
                 </ul>
             </div>
@@ -38,9 +37,20 @@
                         <li jControll="contextMenu" jData="logout" class="logout">로그아웃</li>
                     </ul>
                 </div>
-                
+
                 <div class="container" id='content'>
-                    
+
+                  <ul class="navBar">
+                      <li class="select">홈</li>
+                      <li>차리기</li>
+                      <li>히스토리</li>
+                  </ul>
+                
+
+                    <div class = "searchArea">
+                    <input type="text" class="form-control small left">
+                    <span class="btn small left">검색</span>
+                    </div>
                 </div>
             </div>
         </div>
