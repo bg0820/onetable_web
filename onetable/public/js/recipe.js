@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     serverRequest("http://1.240.181.56:8080/recipe/search/all", "GET", {
-        startNum: 0,
+        page: 1,
         itemNum: 80
     }, 'json').then(function(result) {
         
@@ -38,26 +38,3 @@ $(document).ready(function(){
         }
     });  
 });
-
-
-function addComma(num) {
-    var regexp = /\B(?=(\d{3})+(?!\d))/g;
-    return num.toString().replace(regexp, ',');
-}
-
-
-function getFormdate(date, type)
-{
-	var year = date.getFullYear();
-	var month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
-	var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-
-	var hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
-	var min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
-	var sec = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
-
-	if(type =='full')
-	    return year + '.' + month + '.' + day + ' ' + hour + ':' + min + ':' + sec;
-	else if(type == 'min')
-		return year + '.' + month + '.' + day;
-}

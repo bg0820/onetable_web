@@ -17,6 +17,12 @@ window.onclick = function(event) {
     contextVisible = false;
     $('#contextMenu').hide();
 
+    // modal 백그라운드 클릭시 모달창 닫기
+	var modal = document.getElementById('modalBack');
+    if (eventTarget == modal)
+        modal.style.display = "none";
+
+   
     switch (jControll) {
 
         case 'menuLink':
@@ -34,48 +40,156 @@ window.onclick = function(event) {
                 $('#contextMenu').show();
                 contextVisible = true;
             }
+
+            if(jData == 'logout')
+                location.href="login.html";
                 
+            break;
+        case 'ingredientDetailView':
+            showModal(jControll, jData);
+           
+            break;
+        case 'leftSlide':
+                document.getElementById('popula').scrollLeft -= document.getElementById('popula').offsetWidth;
+            break;
+        case 'rightSlide':
+                document.getElementById('popula').scrollLeft += document.getElementById('popula').offsetWidth;
             break;
     }
 }
-/*
-function splits(l) {
-    var resu = [];
 
-    console.log(l);
-    if(l.length == 0)
-        return null;
+function modalClose()
+{
+	var modal = document.getElementById('modalBack');
+	modal.style.display = 'none';
+}
 
-    for(var i = 0 ; i < l.length; i++)
+function getPopularRecipe() {
+    let resp = await serverRequest('http://1.240.181.56:8080/home/popular/recipe', "GET", {}, "json");
+
+    
+
+    for(var  i = 0 ;  i< resp.data.length; i++)
     {
-        var item = l[i];
+        let item =  resp.data[i];
 
-        var itemSpl = item.N.split('/');
+        console.log(item);
+        var html = "";
 
-        if(itemSpl.length > 0)
-        {
-            for(var f = 0 ; f < itemSpl.length; f++)
-                resu.push({'C': item.C, 'N': itemSpl[f]});
-        }
-        else
-            resu.push({'C': item.C, 'N': item.N});
+        html += "<div class='item'>"
+        html += "<div class='listItem'>";
+        html += "<div class='listItemHeader'><img src='img/user.svg' width='32px' height='32px'>";
+        html += "<p>system</p>";
+        html += "</div>";
+        html += "<div class='listItemContent'>";
+        html += "<div class='imgWrap'>";
+        html += "<img src='" + item.recipeImg + "'>";
+        html += "</div>";
+        html += "<div class='info'>";
+        html += "<div class='interaction'>";
+        html += "<span class='I_BLANK_LIKE select'></span>";
+        html += "<p>3명</p>";
+        html += "</div>";
+        html += "<p class='title'>알리오올리오</p>";
+        html += "<div class='footerInfo'>";
+        html += "<p class='price'>92,680원</p>";
+        html += "<p class='createDate'>2019.05.17</p>";
+        html += "</div>";
+        html += "</div>";
+        html += "</div>";
+        html += "<div class='wrapper'></div>";
+        html += "</div>";
+        html += "</div>";
 
-        var lItem = splits(item.L);
-        
-        if(lItem != null)
-        {
-            for(var j = 0 ; j < lItem.length; j++)
-            {
-                resu.push(lItem[j]);
-            }
-        }
-            
+        $('#popula').append("");
     }
 
-    return resu;
-}*/
+   
+
+
+}
+
+
+async function showModal(_type, _data) {
+    switch(_type)
+    {
+        case 'ingredientDetailView':
+            await initModal('/ajax-page/ingredientDetail_modal.html', _data);
+
+            let resp = await serverRequest("http://1.240.181.56:8080/ingredient/price", "GET", {ingredientItemId: _data}, "json");
+
+            var x =[];
+            var y = [];
+            
+            var firstPrice = resp.data[0].price ;
+            var yMin = firstPrice - (firstPrice * 0.1);
+            var yMax = firstPrice + (firstPrice * 0.1);
+
+            for(var i = 0 ; i < resp.data.length; i++)
+            {
+                x.push(resp.data[i].priceDate);
+                y.push(resp.data[i].price)
+            }
+            
+            y.reverse();
+            x.reverse();
+
+            var ctx = document.getElementById('myChart');
+            var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                    labels: x,
+                    datasets: [{
+                        label: null,
+                        data: y,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            tension: 0 // disables bezier curves
+                        }
+                    },
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                min: yMin,
+                                max: yMax
+                            }
+                        }]
+                    }
+                }
+
+            });
+
+            
+            break;
+    }
+    
+}
+
+
+async function initModal(_url, _data) {
+	var modal = document.getElementById('modalBack');
+	modal.style.display = "flex";
+    
+    let modalResult = await serverRequest(_url, "GET", {}, "html");
+    document.getElementById('modal').innerHTML = modalResult;
+}
+
 
 $(document).ready(function(){
+    menuLink('home');
     //serverRequest("/e.json", "GET", {}, "json").then(function(result) {
        //console.log(splits(result.L));
     //});
@@ -104,7 +218,7 @@ function menuSelect(type)
 }
 
 
-function serverRequest(url, method, param, dataType)
+async function serverRequest(url, method, param, dataType)
 {
     return new Promise(function(resolve, reject) {
         $.ajax({
@@ -122,4 +236,27 @@ function serverRequest(url, method, param, dataType)
                 } // 요청 실패
         });
     });    
+}
+
+
+function addComma(num) {
+    var regexp = /\B(?=(\d{3})+(?!\d))/g;
+    return num.toString().replace(regexp, ',');
+}
+
+
+function getFormdate(date, type)
+{
+	var year = date.getFullYear();
+	var month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
+	var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+
+	var hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+	var min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+	var sec = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+
+	if(type =='full')
+	    return year + '.' + month + '.' + day + ' ' + hour + ':' + min + ':' + sec;
+	else if(type == 'min')
+		return year + '.' + month + '.' + day;
 }

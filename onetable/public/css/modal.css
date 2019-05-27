@@ -1,0 +1,90 @@
+.modalBack {
+	position: fixed;
+	display: none;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 99;
+}
+
+.modalBack .modal {
+	left: 0;
+	background: #fff;
+	width: 450px;
+	border: 1px solid #ccc;
+
+	z-index: 100;
+}
+
+.modal .modalTitle {
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+	height: 50px;
+}
+
+.modal .modalTitle .titleStr {
+	color: #747474;
+	float:left;
+}
+
+.modal .modalContent {
+	padding: 15px;
+}
+
+/* The Close Button */
+.modal_close {
+	float: right;
+	color: #aaa;
+	line-height: 100%;
+	font-size: 20pt;
+	z-index: 100;
+	margin-top: -5px;
+}
+
+.modal_close:hover,
+.modal_close:focus {
+   color: #545454;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.modal .button {
+	margin-top:15px;
+}
+
+/*****************************************
+			Email
+*****************************************/
+.modal .emailInput
+{
+	position: block;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.modal .emailStr {
+	flex: 1;
+	text-align: center;
+	line-height: 40px;
+	color: #848484;
+}
+
+.modal .inputEmailID {
+	flex: 5;
+}
+
+.modal .inputEmail {
+	flex: 4;
+	margin-right: 10px;
+}
+
+.modal .emailSelect {
+	flex: 5;
+}
+
+.modalBtn {
+	margin-top: 20px;
+}
