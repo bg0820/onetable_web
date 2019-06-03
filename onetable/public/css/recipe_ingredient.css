@@ -194,6 +194,7 @@ span.I_BLANK_FAVORITE.select {
     color: #ccc;
     font-size: 1.6rem;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .navBar li.select {

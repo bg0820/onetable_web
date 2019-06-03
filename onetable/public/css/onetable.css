@@ -1,7 +1,29 @@
-.splitTop
-{
-  flex: 2;
-  min-width: 180px;
-  max-width: 230px;
-  background: #98cfc4;
+.onetable_split {
+	display:flex;
+	flex-direction: row;
 }
+
+.onetable_split .sL {
+	padding-right: 10px;
+	flex: 1;
+}
+
+.onetable_split .sR {
+	padding-left: 10px;
+	flex: 1;
+}
+
+.sL .recipeSearchArea > * {
+	margin-top: 20px;
+	float: left;
+}
+
+.sL .recipeSearchArea input {
+	width: 250px;
+}
+
+.sL .recipeSearchArea .btn {
+	width: 120px;
+}
+
+.sL .recipeSearchArea 

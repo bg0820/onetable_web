@@ -1,6 +1,34 @@
 $(document).ready(function(){
+	recipeSearchPage();
+});
 
-    serverRequest("http://1.240.181.56:8080/recipe/search/all", "GET", {
+function recipeSearchPage()
+{
+	serverRequest("./ajax-page/recipeSearch.html", "GET", {}, "html").then(function(result) {
+		document.getElementById('subContent').innerHTML = result;
+		getRecipeListAll();
+	});
+}
+
+function recipeEnrollPage() {
+	serverRequest("./ajax-page/recipeEnroll.html", "GET", {}, "html").then(function(result) {
+		document.getElementById('subContent').innerHTML = result;
+	});
+}
+
+$("li[jControll='navBar']").click(function() {
+	let clickElem = this;
+	$("li[jControll='navBar']").removeClass('select');
+	$(clickElem).addClass('select');
+
+	if($(clickElem).attr("jData") == 'recipeSearch')
+		recipeSearchPage();
+	else if($(clickElem).attr("jData") == 'recipeEnroll')
+		recipeEnrollPage();
+});
+
+function getRecipeListAll() {
+	serverRequest("http://1.240.181.56:8080/recipe/search/all", "GET", {
         page: 1,
         itemNum: 80
     }, 'json').then(function(result) {
@@ -13,7 +41,7 @@ $(document).ready(function(){
             $('#listArea').append(listItemHTML);
         }
     });  
-});
+}
 
 function addItem(data) {
 	var priceStr = data.price == null ? '가격 미제공' : addComma(data.price) + "원";
