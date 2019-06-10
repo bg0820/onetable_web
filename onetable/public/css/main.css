@@ -67,9 +67,7 @@
     .popularSlide .item {
         width: 25%;
     }
-    
 }
-
 
 @media all and (max-width: 900px) {
     .content .splitLeft{
