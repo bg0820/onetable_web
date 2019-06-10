@@ -4,9 +4,16 @@
     <li  class="select" jControll="navBar" jData="recipeEnroll">등록</li>
     <li jControll="navBar" jData="recipeHistory">히스토리</li>
 </ul>
-<div id="subContent">
-	<input id="recipeSearhValue" type="text" class="form-control small left">
-	<div id="recipeSearhBtn" class="btn small left">검색</div>
+<div class="searchArea">
+    <select class="form-control small left">
+        <option>전체</option>
+        <option>재료 명</option>
+    </select>
+    <input type="text" class="form-control small left">
+    <div class="btn small left">검색</div>
 </div>
+<ul class="listArea" id="listArea">
+
+</ul>
 
 <script async type="text/javascript"  src="/js/recipe.js"></script>
