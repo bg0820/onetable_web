@@ -1,0 +1,313 @@
+<link href="./css/recipe.css" rel="stylesheet" type="text/css" />
+
+<style>
+    .contentArea .sUp {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+
+    .contentArea .sUp .sLeft {
+        flex: 6;
+        padding-right: 10px;
+    }
+
+    .contentArea .sUp .sLeft img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        max-width: 800px;
+    }
+
+    .contentArea .sUp .sRight {
+        flex: 4;
+        padding-left: 10px;
+    }
+
+    .sUp .sRight table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .sUp .sRight table tr {
+        border-bottom: 1px solid #ccc;
+        height: 40px;
+    }
+
+    .sDown {
+        margin-top:80px;
+    }
+
+    .user_recipe {
+        float: left;
+        font-size:25px;
+        padding-bottom : 20px;
+    }
+
+
+    .ingredient_information {
+        max-height: 400px;
+        max-width: 500px;
+        margin-top:20px;
+    }
+
+    .recipe_price {
+        font-size:20px;
+        margin-top:20px;
+    }
+    .total_price {
+        font-size:20px;
+        color : lightcoral;
+    }
+
+    td {
+        font-size:17px;
+        color : lightslategrey;
+    }
+
+    .recipe_information{
+    width: 800px;
+    box-sizing: border-box;
+    background: #e6e6e6;
+    padding: 20px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    text-align: center;
+}
+
+.recipe_information span {
+    display: inline-block;
+    width: 30%;
+    color:lightslategrey;
+    font-size: 16px;
+}
+
+.reply {
+    max-width : 800px;
+    font-size:16px;
+    padding : 0px 10px;
+    border-collapse: collapse;
+}
+
+
+ul, ol, li, dl, dt, dd {
+    list-style: none;
+}
+
+.view_reply {
+    padding: 100px 50px 10px;
+
+}
+
+.reply_tit {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e6e7e8;
+    margin-bottom: 10px;
+}
+
+.reply_write {
+    display: block;
+    height: 116px;
+    margin-top: 14px;
+}
+
+.reply_write .input-group {
+    width: 730px;
+    float: right;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+.reply_write .input-group {
+    float: left;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    width: 1%;
+}
+
+.input-group-btn {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group .form-control, .input-group-btn {
+    display: table-cell;
+}
+
+.btn_reply {
+    float : left;
+}
+
+.star_grade_l {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.star_grade_l .stars {
+    display: inline-block;
+    width: 158px;
+    height: 30px;
+    overflow: hidden;
+    background: url(../../image/pc/ico/five_star_gray_l_01.png) 0 0 no-repeat;
+    background-size: 158px 30px;
+}
+
+.star_grade_l .stars {
+    display: inline-block;
+    height: 30px;
+    overflow: hidden;
+    background: url(../../image/pc/ico/five_star_gray_l_01.png) 0 0 no-repeat;
+    background-size: 158px 30px;
+}
+
+.star_grade_l .total_num {
+    font-size: 23px;
+    margin-left: 9.5px;
+    color: #666;
+    line-height: normal;
+    vertical-align: top;
+    letter-spacing: normal;
+    display: inline-block;
+    margin-top: 4px;
+}
+    </style>
+
+<div class="contentArea">
+    <div class="sUp">
+            <div class="sLeft">
+                    <div class="user_recipe">이아현 님의 "  </div>
+                    <div class="user_recipe">제육볶음</div>"
+                    <img src="//img-cf.kurly.com/shop/data/goods/1554104031692l0.jpg" />
+                    
+            
+                </div>
+            
+                <div class="sRight">
+            
+                    <div class="recipe_price">총 레시피 금액 : <span id="" class="total_price">12,500</span>원
+                        <table class="ingredient_information">
+                            <thead>
+                                <tr>
+                                    <td>재료</td>
+                                    <td>양(g)</td>
+                                    <td>가격</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>양파</td>
+                                    <td>200</td>
+                                    <td>3300</td>
+                                </tr>
+                                <tr>
+                                    <td>마늘</td>
+                                    <td>50</td>
+                                    <td>2000</td>
+                                </tr>
+                                <tr>
+                                    <td>돼지고기</td>
+                                    <td>200</td>
+                                    <td>4500</td>
+                                </tr>
+                                <tr>
+                                    <td>간장</td>
+                                    <td>30</td>
+                                    <td>1000</td>
+                                </tr>
+                                <tr>
+                                    <td>고추장</td>
+                                    <td>30</td>
+                                    <td>1500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+            
+                    </div>
+            
+                </div>
+    </div>
+
+    <div class="recipe_information" align="left">
+            <span class="recipe_time">분</span> 
+            <span class="recipe_serving">인분</span>
+            <span class="recipe_kcal">칼로리</span>
+        </div>
+
+    
+    <div class="sDown" align="center">
+
+            '<li> 
+                    <div class="img-cover"> 
+                     <img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66730/org_resized_____2019-01-29-19-03-49.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 19 03 49"> 
+                    </div> <p>매운 고추장 제육볶음 부재료를 갈아 밑간 후 양념을 섞어서 맛이 깊고 화끈하게 매운 제육볶음이예요</p> </li> 
+                   <li> 
+                    <div class="img-cover"> 
+                     <img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66731/org_resized_____2019-01-29-18-09-50.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 09 50"> 
+                    </div> <p>믹서기에 갈 재료는 큼직하게 썰고 사과는 씨 제거 후 껍질째 사용합니다</p> </li> 
+                   <li> 
+                    <div class="img-cover"> 
+                     <img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66732/org_resized_____2019-01-29-18-18-02.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 18 02"> 
+                    </div> <p>썬 재료는 믹서기에 넣고 맛술2 진간장 2스푼을 넣고 믹서기에 곱게 갈아주세요</p> </li> 
+                   <li> 
+                    <div class="img-cover"> 
+                     <img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66733/org_resized_____2019-01-29-18-19-40.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 19 40"> 
+                    </div> <p>돼지고기 앞다릿살은 볼에 넣고 간 재료를 넣고 버무린 후 약 10분 정도 간이 배게 두세요</p> </li> 
+                   <li> 
+                    <div class="img-cover"> 
+                     <img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66734/org_resized_____2019-01-29-18-48-11.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 48 11"> 
+                    </div> <p>10분 후 양념 재료를 넣고 골고루 버무립니다</p> </li> 
+                   <li> 
+                    <div class="img-cover"> 
+                     <img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66735/org_resized_____2019-01-29-18-58-40.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 58 40"> 
+                    </div> <p>팬을 뜨겁게 달궈주세요 여기에 양념한 고기를 넣고 빠르게 타지 않게 볶아주고 불은 중불로 줄이고 고기를 익혀줍니다</p> </li> 
+                   <li> 
+                    <div class="img-cover"> 
+                     <img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66736/org_resized_____2019-01-29-19-04-12.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 19 04 12"> 
+                    </div> <p>화끈하고 맛있게 매운 제육볶음 완성입니다~</p> </li>'
+       
+    </div>
+    <div class="view_reply">
+        <div class="reply_tit">
+        댓글
+        </div>
+        <p class="star_grade_1">
+            <span class="stars">
+                <span class="percent_average_comp" average="100" style="width:100%;"></span>
+            </span>
+            <span class="total_num">5.0</span>
+            </p>
+        <div class="reply_write">
+           <div class="input_group" style="width :680px;">
+            <textarea id="cmt_tx_content1" onclick="EZ.ATLogin(); return false;" name="frm[cmt_tx_content]" class="form-control" placeholder="댓글을 남겨주세요." style="height:100px;width:100%; resize:none; float:left;"></textarea>
+            <span class="input-group-btn" style:10%;>
+            </span>
+          </div>
+          <button class="btn btn_reply" type="button" onclick="doCommentSubmit(1)" style="height:100px; width:100px; float:left;">등록</button>
+        </div>
+          <div id="re_reply_div" style="display:none;">
+          </div>
+      </div>
+    
+
+
+<script async type="text/javascript" src="/js/recipe.js"></script>
