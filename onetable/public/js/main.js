@@ -24,23 +24,6 @@ window.onclick = function(event) {
 
    
     switch (jControll) {
-        case 'navBar' :
-            $("li[jControll='navBar']").removeClass('select');
-            jEventTarget.addClass('select');
-
-
-            if(jData == 'search')
-            {
-                serverRequest("./ajax-page/recipeSearch.html", "GET", {}, "html").then(function(result) {
-                    document.getElementById('subContent').innerHTML = result;
-                });
-            } else if(jData == 'enroll') {
-                serverRequest("./ajax-page/recipeEnroll.html", "GET", {}, "html").then(function(result) {
-                    document.getElementById('subContent').innerHTML = result;
-                });
-            }
-
-            break;
         case 'menuLink':
             menuLink(jData);
 
@@ -80,48 +63,6 @@ function modalClose()
 	modal.style.display = 'none';
 }
 
-async function getPopularRecipe() {
-    let resp = await serverRequest('http://1.240.181.56:8080/home/popular/recipe', "GET", {}, "json");
-
-    for(var  i = 0 ;  i< resp.data.length; i++)
-    {
-        let item =  resp.data[i];
-
-        console.log(item);
-        var html = "";
-
-        html += "<div class='item'>"
-        html += "<div class='listItem'>";
-        html += "<div class='listItemHeader'><img src='img/user.svg' width='32px' height='32px'>";
-        html += "<p>system</p>";
-        html += "</div>";
-        html += "<div class='listItemContent'>";
-        html += "<div class='imgWrap'>";
-        html += "<img src='" + item.recipeImg + "'>";
-        html += "</div>";
-        html += "<div class='info'>";
-        html += "<div class='interaction'>";
-        html += "<span class='I_BLANK_LIKE select'></span>";
-        html += "<p>3명</p>";
-        html += "</div>";
-        html += "<p class='title'>" + item.name + "</p>";
-        html += "<div class='footerInfo'>";
-        html += "<p class='price'>92,680원</p>";
-        html += "<p class='createDate'>2019.05.17</p>";
-        html += "</div>";
-        html += "</div>";
-        html += "</div>";
-        html += "<div class='wrapper'></div>";
-        html += "</div>";
-        html += "</div>";
-
-        $('#popula').append("");
-    }
-
-   
-
-
-}
 
 
 async function showModal(_type, _data) {
@@ -201,35 +142,6 @@ async function initModal(_url, _data) {
     document.getElementById('modal').innerHTML = modalResult;
 }
 
-
-$(document).ready(function(){
-    menuLink('home');
-    //serverRequest("/e.json", "GET", {}, "json").then(function(result) {
-       //console.log(splits(result.L));
-    //});
-});
-
-function menuLink(type)
-{
-    menuSelect(type);
-
-    $('#content').load( './ajax-page/' + type + '.html' );    
-}
-
-function menuSelect(type)
-{
-    $("li[jControll='menuLink']").removeClass("select");
-    
-    var menuLink = $("li[jControll='menuLink']");
-    
-    for(var i = 0 ; i < menuLink.length; i++)
-    {
-        if($(menuLink[i]).attr('jData') == type) {
-            $(menuLink[i]).addClass('select');
-            break;
-        }
-    }
-}
 
 
 async function serverRequest(url, method, param, dataType)

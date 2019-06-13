@@ -42,6 +42,10 @@
     max-height: 280px;
 }
 
+
+.subContent {
+	height: 100%;
+}
 /*
 .imgWrap .evaluate {
     color: #fff;
@@ -52,8 +56,11 @@
 }*/
 
 ul.listArea {
-    list-style: none;
+	list-style: none;
+	overflow:scroll;
+	height: calc(100% - 100px);
 }
+
 
 ul.listArea::after {
     content:'';
@@ -191,13 +198,18 @@ span.I_BLANK_FAVORITE.select {
 
 .navBar li {
     float: left;
-    color: #ccc;
-    font-size: 1.6rem;
+    
     margin-right: 20px;
+    cursor: pointer;
 }
 
-.navBar li.select {
-    color: #74cebd;
+.navBar li a {
+	color: #ccc;
+    font-size: 1.6rem;
+}
+
+.navBar li.select a {
+    color: rgba(123,111,247);
     font-weight: bold;
 }
 

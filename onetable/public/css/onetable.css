@@ -1,7 +1,135 @@
-.splitTop
-{
-  flex: 2;
-  min-width: 180px;
-  max-width: 230px;
-  background: #98cfc4;
+.navBar {
+    list-style: none;
+    height: 35px;
+}
+
+.navBar::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.navBar li {
+    float: left;
+    
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.navBar li a {
+	color: #ccc;
+    font-size: 1.6rem;
+}
+
+.navBar li.select a {
+    color: #7B6FF7;
+    font-weight: bold;
+}
+
+.onetable_split {
+	display:flex;
+	flex-direction: row;
+	overflow: hidden;
+	height: calc( 100% - 55px);
+}
+
+.onetable_split .sL {
+	padding-right: 10px;
+	width: 400px;
+}
+
+.onetable_split .sR {
+	position: relative;
+	flex: 1;
+}
+
+.sL .onetableInput {
+	border: 0px;
+	width: 250px;
+	border-bottom: 1px solid #ccc;
+}
+
+.sL .recipeSearchArea {
+	margin-top:50px;
+	overflow: hidden;
+}
+
+.recipeSearchArea input {
+	width: 250px;
+}
+
+.recipeSearchArea .btn {
+	width: 120px;
+}
+
+.sL .searchResultList {
+	height: 300px;
+	width: 370px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-width: 0px 1px 1px 1px;
+	border-color: #ccc;
+	border-style: solid;
+}
+
+.searchResultList ul {
+	list-style: none;
+}
+
+.searchResultList ul li {
+	height: 60px;
+	width: 360px;
+	line-height: 60px;
+	padding: 5px;
+	border-width: 0px 0px 1px 0px;
+	border-color: #eee;
+	border-style:solid;
+}
+
+.searchResultList ul li > * {
+	float: left;
+	margin-right: 10px;
+}
+
+.sR .totalPrice {
+	position: relative;
+	margin-top:20px;
+	color: #949494;
+	font-size: 1.3rem;
+}
+
+.sR .dropWrap {
+    position: relative;
+	width: 60vh; /* 원하는 가로크기 */
+	margin: 0 auto;
+} 
+.sR .dropWrap:before {
+    content: "";
+    display: block;
+    padding-top: 100%; /* 1:1 비율 */
+} 
+
+.dropWrap .dropArea { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.dropArea .circle {
+	width:100%;
+	height:100%;
+	line-height: 100%;
+	border-radius: 50%;
+	border: 3px dotted #ccc;
+	text-align: center;
+	color: #ccc;
+	font-size: 1.5rem;
+}
+
+.onetableBtn {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
 }

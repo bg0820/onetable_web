@@ -21,7 +21,7 @@ table {
 
 a {
 	text-decoration: none;
-	color: #3D4354;
+	color: #7B6FF7;
 }
 
 html, body {
@@ -30,15 +30,35 @@ html, body {
     height:100%;
 	margin: 0;
 	padding: 0;
+	overflow:hidden;
 	user-select: none;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+    background-color:#fff;
+    width: 6px
 }
-/* Optional: show position indicator in red */
 
+::-webkit-scrollbar-track {
+    background-color:#fff
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:#babac0;
+    border-radius: 8px;
+    border: 1px solid #fff
+}
+
+::-webkit-scrollbar-button {display:none}
+
+
+
+/*
+::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+}
+*/
 
 .left {
     float: left;
@@ -91,9 +111,14 @@ html, body {
     display: -webkit-flex;
 }
 
+select.form-control {
+	border: 1px solid #7B6FF7;
+}
+
 .form-control {
 	background:white;
-    border: 1px solid #ccc;
+	border: 1px solid #ccc;
+	color: #747474;
     width: 100%;
     height: 45px;
     line-height: 45px;
@@ -115,7 +140,7 @@ html, body {
 
 .form-control:focus {
 	outline: none;
-	border: 1px solid #74cebd;
+	border: 1px solid #7B6FF7;
 }
 
 .item_title {
@@ -127,16 +152,16 @@ html, body {
 }
 
 .btn {
-    border: 1px solid #74cebd;
-    color: #74cebd;
+	border: 1px solid #7B6FF7;
+    color: #7B6FF7;
     height: 60px;
     line-height: 60px;
-    font-size: 1.15rem;
+    font-size: 0.9rem;
 	cursor: pointer;
 	text-align: center;
 }
 .btn:hover {
-    background: #74cebd;
+    background: #7B6FF7;
     color: #fff;
 }
 
