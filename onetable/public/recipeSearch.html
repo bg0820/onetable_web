@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./css/main.css" rel="stylesheet" type="text/css" />
         <link href="./css/common.css" rel="stylesheet" type="text/css" />
-
+		<link href="./css/recipe_ingredient.css" rel="stylesheet" type="text/css" />
 
         <script src="./js/jquery-3.4.1.min.js"></script>
         <script src="./js/main.js"></script>
-        
+		<script src="./js/recipe.js"></script>
+
         <title>한상 차림</title>
     </head>
     <body>
@@ -20,7 +21,7 @@
         <div class='content'>
             <div class="splitLeft">
 				<ul>
-					<li class="select">
+					<li>
 						<a href="main.html">
 							<span class="I_HOME"></span><p>홈</p>
 						</a>
@@ -30,12 +31,12 @@
 							<span class="I_INGREDIENT"></span><p>재료 가격</p>
 						</a>
 					</li>
-					<li>
+					<li class="select">
 						<a href="recipeSearch.html">
 							<span class="I_RECIPE"></span><p>레시피</p>
 						</a>
 					</li>
-					<li> 
+					<li>
 						<a href="onetableEnroll.html">
 							<span class="I_ONETABLE"></span><p>한상차림</p>
 						</a>
@@ -59,11 +60,44 @@
                 </div>
                 
                 <div class="container" id='content'>
-					
-					
-
-
-
+					<ul class="navBar">
+						<li class="select">
+							<a href="recipeSearch.html">
+								검색
+							</a>
+						</li>
+						<li>
+							<a href="recipeEnroll.html">
+								등록
+							</a>
+						</li>
+						<li>
+							<a href="recipeHistory.html">
+								히스토리
+							</a>
+						</li>
+					</ul>
+					<div id="subContent" class="subContent">
+						<div class="searchArea">
+							<select class="form-control small left">
+								<option>전체</option>
+								<option>재료 명</option>
+							</select>
+							<input id="recipeSearhValue" type="text" class="form-control small left">
+							<div id="recipeSearhBtn" class="btn small left">검색</div>
+						
+							<select class="form-control small left">
+								<option>정렬방식</option>
+								<option>가나다순</option>
+								<option>등록순</option>
+								<option>평점순</option>
+								<option>가격순</option>
+							</select>
+						</div> 
+						<ul class="listArea recipe" id="listArea">
+							
+						</ul>
+					</div>			
                 </div>
             </div>
         </div>

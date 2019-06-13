@@ -3,13 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./css/main.css" rel="stylesheet" type="text/css" />
+		<link href="./css/main.css" rel="stylesheet" type="text/css" />
         <link href="./css/common.css" rel="stylesheet" type="text/css" />
-
+        <link href="./css/modal.css" rel="stylesheet" type="text/css" />
+		<link href="./css/recipe_ingredient.css" rel="stylesheet" type="text/css" />
 
         <script src="./js/jquery-3.4.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
         <script src="./js/main.js"></script>
-        
+		<script src="./js/ingredient.js"></script>
+		
         <title>한상 차림</title>
     </head>
     <body>
@@ -19,13 +22,13 @@
 
         <div class='content'>
             <div class="splitLeft">
-				<ul>
-					<li class="select">
+                <ul>
+					<li>
 						<a href="main.html">
 							<span class="I_HOME"></span><p>홈</p>
 						</a>
 					</li>
-					<li>
+                    <li class="select">
 						<a href="ingredientSearch.html">
 							<span class="I_INGREDIENT"></span><p>재료 가격</p>
 						</a>
@@ -35,7 +38,7 @@
 							<span class="I_RECIPE"></span><p>레시피</p>
 						</a>
 					</li>
-					<li> 
+					<li>
 						<a href="onetableEnroll.html">
 							<span class="I_ONETABLE"></span><p>한상차림</p>
 						</a>
@@ -45,7 +48,7 @@
 							<span class="I_RANKING"></span><p>랭킹</p>
 						</a>
 					</li>
-				</ul>
+                </ul>
             </div>
             <div class="splitRight">
                 <div class="userInfo" jControll='contextMenu'>
@@ -59,11 +62,13 @@
                 </div>
                 
                 <div class="container" id='content'>
-					
-					
-
-
-
+					<div class="searchArea ingredient">
+						<input type="text" class="form-control small left" id="ingredientSearchValue">
+						<div class="btn small left" id="ingredientSearhBtn">검색</div>
+					</div>
+					<ul class="listArea" id="listArea">
+						
+					</ul>
                 </div>
             </div>
         </div>

@@ -1,17 +1,57 @@
+var allPage = 1;
+var _itemNum = 30;
+var type = 'all'
 $(document).ready(function() {
-  serverRequest("http://1.240.181.56:8080/ingredient/search/all", "GET", {
-        page: 1,
-        itemNum: 30
-      }, 'json').then(function(result) {
-        for(var i = 0 ; i < result.data.length; i++)
-        {
-          let data = result.data[i];
-          let listItemHTML  = addItem(data);
-         
-          $('#listArea').append(listItemHTML);
-        }
-      });
+	getIngredientList();
+
+	$('#listArea').scroll(function() {
+		var scrollT = $(this).scrollTop(); //스크롤바의 상단위치
+		var scrollH = $(this).height() + 150; //스크롤바를 갖는 div의 높이
+		var contentH = $('#listArea').prop('scrollHeight'); //문서 전체 내용을 갖는 div의 높이
+
+		if(scrollT  + scrollH >= contentH) { // 스크롤바가 맨 아래에 위치할 때
+			allPage++;
+			getIngredientList();
+		}
+	});
 })
+
+$('#ingredientSearhBtn').click(function() {
+	allPage = 1;
+	$('#listArea').empty();
+	type = 'search';
+	getIngredientList();
+});
+
+function getIngredientList() {
+	if(type === 'all') {
+		serverRequest("http://1.240.181.56:8080/ingredient/search/all", "GET", {
+			page: allPage,
+			itemNum: _itemNum
+		}, 'json').then(function(result) {
+		for(var i = 0 ; i < result.data.length; i++) {
+			let data = result.data[i];
+			let listItemHTML  = addItem(data);
+		
+			$('#listArea').append(listItemHTML);
+		}
+		});
+	} else {
+		serverRequest("http://1.240.181.56:8080/ingredient/search", "GET", {
+		page: allPage,
+		itemNum: _itemNum,
+		query: $('#ingredientSearchValue').val()
+		}, 'json').then(function(result) {
+			for(var i = 0 ; i < result.data.length; i++)
+			{
+			let data = result.data[i];
+			let listItemHTML  = addItem(data);
+			
+			$('#listArea').append(listItemHTML);
+			}  
+		});
+	}
+}
 
 function addItem(data) {
   var priceStr = addComma(data.price) + "원";
@@ -39,19 +79,3 @@ function addItem(data) {
   return listItemHTML;
 }
 
-$('#ingredientSearhBtn').click(function() {
-  $('#listArea').empty();
-  serverRequest("http://1.240.181.56:8080/ingredient/search", "GET", {
-    page: 1,
-    itemNum: 30,
-    query: $('#ingredientSearchValue').val()
-  }, 'json').then(function(result) {
-    for(var i = 0 ; i < result.data.length; i++)
-    {
-      let data = result.data[i];
-      let listItemHTML  = addItem(data);
-     
-      $('#listArea').append(listItemHTML);
-    }  
-  });
-});

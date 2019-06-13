@@ -22,7 +22,7 @@ table {
 
 a {
 	text-decoration: none;
-	color: #3D4354;
+	color: #7B6FF7;
 }
 
 html, body {
@@ -31,6 +31,7 @@ html, body {
     height:100%;
 	margin: 0;
 	padding: 0;
+	overflow:hidden;
 	user-select: none;
 }
 
@@ -111,6 +112,10 @@ html, body {
     display: -webkit-flex;
 }
 
+select.form-control {
+	border: 1px solid #7B6FF7;
+}
+
 .form-control {
 	background:white;
 	border: 1px solid #ccc;
@@ -136,7 +141,7 @@ html, body {
 
 .form-control:focus {
 	outline: none;
-	border: 1px solid #74cebd;
+	border: 1px solid #7B6FF7;
 }
 
 .item_title {
@@ -148,8 +153,8 @@ html, body {
 }
 
 .btn {
-    border: 1px solid #74cebd;
-    color: #74cebd;
+	border: 1px solid #7B6FF7;
+    color: #7B6FF7;
     height: 60px;
     line-height: 60px;
     font-size: 0.9rem;
@@ -157,7 +162,7 @@ html, body {
 	text-align: center;
 }
 .btn:hover {
-    background: #74cebd;
+    background: #7B6FF7;
     color: #fff;
 }
 

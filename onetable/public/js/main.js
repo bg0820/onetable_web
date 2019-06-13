@@ -143,32 +143,6 @@ async function initModal(_url, _data) {
 }
 
 
-$(document).ready(function(){
-    menuLink('home');
-});
-
-function menuLink(type)
-{
-    menuSelect(type);
-
-    $('#content').load( './ajax-page/' + type + '.html' );    
-}
-
-function menuSelect(type)
-{
-    $("li[jControll='menuLink']").removeClass("select");
-    
-    var menuLink = $("li[jControll='menuLink']");
-    
-    for(var i = 0 ; i < menuLink.length; i++)
-    {
-        if($(menuLink[i]).attr('jData') == type) {
-            $(menuLink[i]).addClass('select');
-            break;
-        }
-    }
-}
-
 
 async function serverRequest(url, method, param, dataType)
 {

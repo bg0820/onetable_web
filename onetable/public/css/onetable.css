@@ -1,3 +1,31 @@
+.navBar {
+    list-style: none;
+    height: 35px;
+}
+
+.navBar::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.navBar li {
+    float: left;
+    
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.navBar li a {
+	color: #ccc;
+    font-size: 1.6rem;
+}
+
+.navBar li.select a {
+    color: #7B6FF7;
+    font-weight: bold;
+}
+
 .onetable_split {
 	display:flex;
 	flex-direction: row;
@@ -40,7 +68,7 @@
 	overflow-y: auto;
 	overflow-x: hidden;
 	border-width: 0px 1px 1px 1px;
-	border-color: #eee;
+	border-color: #ccc;
 	border-style: solid;
 }
 
@@ -63,16 +91,16 @@
 	margin-right: 10px;
 }
 
-.sL .totalPrice {
-	position: absolute;
-	bottom:20px;
-	color: #646464;
-	font-size: 1.5rem;
+.sR .totalPrice {
+	position: relative;
+	margin-top:20px;
+	color: #949494;
+	font-size: 1.3rem;
 }
 
 .sR .dropWrap {
     position: relative;
-	width: 80%; /* 원하는 가로크기 */
+	width: 60vh; /* 원하는 가로크기 */
 	margin: 0 auto;
 } 
 .sR .dropWrap:before {
