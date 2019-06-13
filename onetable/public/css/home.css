@@ -1,0 +1,86 @@
+
+.slideBoxWrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.slideBoxArea {
+	margin-bottom: 25px;
+}
+
+.item_title {
+	color: #7B6FF7;
+	font-weight: bold;
+	font-size: 2.2rem;
+	white-space: nowrap;
+	margin-bottom: 15px;
+	padding-left: 10px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.slideBox {
+	position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height: 300px;
+    font-size: 0;
+}
+
+.slideBox .itemBox {
+	display: inline-block;
+    width: 25%;
+    height: inherit;
+    padding: 5px;
+}
+
+.slideBox .itemBox .wrap {
+	background: #eee;
+	width: 100%;
+	height: inherit;
+}
+
+.leftIcon {
+    position: absolute;
+	top: 13px;
+	left: 16px;
+	border: solid #fff;
+	border-width: 0px 0px 3px 3px;
+	transform: rotate(45deg);
+	width:15px;
+	height: 15px;
+}
+
+.rightIcon {
+    position: absolute;
+	top: 13px;
+	right: 16px;
+	border: solid #fff;
+	border-width: 0px 0px 3px 3px;
+	transform: rotate(225deg);
+	width:15px;
+	height: 15px;
+}
+
+
+.slideBoxWrap .leftBtn, .slideBoxWrap .rightBtn  {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    top: 130px;
+    cursor: pointer;
+}
+
+.slideBoxWrap .leftBtn {
+    left: 25px;
+}
+
+.slideBoxWrap .rightBtn {
+    right : 25px;
+}
+
+

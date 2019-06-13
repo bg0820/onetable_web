@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 	$('#listArea').scroll(function() {
 		var scrollT = $(this).scrollTop(); //스크롤바의 상단위치
-		var scrollH = $(this).height() + 150; //스크롤바를 갖는 div의 높이
+		var scrollH = $(this).height() + 20; //스크롤바를 갖는 div의 높이
 		var contentH = $('#listArea').prop('scrollHeight'); //문서 전체 내용을 갖는 div의 높이
 
 		if(scrollT  + scrollH >= contentH) { // 스크롤바가 맨 아래에 위치할 때
@@ -14,14 +14,16 @@ $(document).ready(function() {
 			getIngredientList();
 		}
 	});
+
+	$('#ingredientSearhBtn').click(function() {
+		allPage = 1;
+		$('#listArea').empty();
+		type = 'search';
+		getIngredientList();
+	});
 })
 
-$('#ingredientSearhBtn').click(function() {
-	allPage = 1;
-	$('#listArea').empty();
-	type = 'search';
-	getIngredientList();
-});
+
 
 function getIngredientList() {
 	if(type === 'all') {
