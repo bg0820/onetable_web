@@ -1,0 +1,74 @@
+.categoryList {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #74cebd;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.categoryList .categoryItem {
+  position: relative;
+  float: left;
+  width: 25%;
+  padding: 10px;
+  text-align: center;
+}
+
+.categoryItem img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+}
+
+@media all and (max-width: 1100px) {
+  .categoryList .categoryItem {
+       width: 25%;
+   }
+}
+
+@media all and (max-width: 900px) {
+  .categoryList .categoryItem {
+       width: 33.333%;
+   }
+}
+
+@media all and (max-width: 750px) {
+  .categoryList .categoryItem {
+       width: 50%;
+   }
+}
+
+
+
+/*
+
+table {
+  width : 80%;
+  border : 3px solid #74cebd;
+  border-collapse : collapse;
+  font-style : bold;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+td {
+  padding: 10px;
+    border: 3px solid #74cebd;
+    height : 200;
+    weight : 200;
+}
+
+td img {
+  margin-bottom: 10px;
+}
+*/
+.searchArea ingredient {
+
+  margin-top: 10px;
+
+}
+
+form-control small left{
+    text-align-last: center;
+}

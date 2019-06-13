@@ -12,7 +12,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
         <script src="./js/main.js"></script>
 		<script src="./js/ingredient.js"></script>
-		
+		<script src="./js/ingredientCategory.js"></script>
         <title>한상 차림</title>
     </head>
     <body>
@@ -63,9 +63,30 @@
                 
                 <div class="container" id='content'>
 					<div class="searchArea ingredient">
-						<input type="text" class="form-control small left" id="ingredientSearchValue">
-						<div class="btn small left" id="ingredientSearhBtn">검색</div>
+						<select class="form-control small left" onchange="categoryChange(this)">
+						  <option value = "a">전체</option>
+						  <option value = "b">과일</option>
+						  <option value = "c">채소</option>
+						  <option value = "d">쌀/잡곡</option>
+						  <option value = "e">견과/건해산물</option>
+						  <option value = "f">정육/계란류</option>
+						  <option value = "g">수산물/해산물</option>
+						  <option value = "h">유제품/냉장/냉동/간편식</option>
+						  <option value = "i">건강식품/친환경/유기농</option>
+						  <option value = "j">라면/통조림/조미료/장류</option>
+						  <option value = "k">과자/초콜릿/시리얼/빵</option>
+						  <option value = "l">음료/주류/커피/분유</option>
+						  <option value = "m">반찬/밀키트/델리</option>
+						</select>
+					
+						<select class="form-control small left" id = "detail">
+						  <option>전체</option>
+						</select>
+					
+						<input type="text" class="form-control small left">
+						<div class="btn small left">검색</div>
 					</div>
+							  
 					<ul class="listArea" id="listArea">
 						
 					</ul>

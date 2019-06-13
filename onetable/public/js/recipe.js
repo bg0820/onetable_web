@@ -62,7 +62,7 @@ function addItem(data) {
   	var listItemHTML = "";
 	listItemHTML += "<li>";
     listItemHTML += "<div class='listItem'>";
-    listItemHTML += "<div class='listItemHeader'>"; 
+    listItemHTML += "<div class='listItemHeader'>";
     listItemHTML += "<img src='img/user.svg' width='32px' height='32px'/>";
     listItemHTML += "<p>" + data.nickName + "</p>";
     listItemHTML += "</div>";
@@ -99,8 +99,8 @@ $('#recipeSearhBtn').click(function() {
 	  {
 		let data = result.data.obj[i];
 		let listItemHTML  = addItem(data);
-	   
+
 		$('#listArea').append(listItemHTML);
-	  }  
+	  }
 	});
   });
