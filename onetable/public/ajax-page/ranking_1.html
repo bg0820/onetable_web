@@ -1,51 +1,24 @@
 <link href="./css/ranking.css" rel="stylesheet" type="text/css" />
 
 <ul class="navBar">
-  <li class="select">레시피</li>
-  <li>셰프</li>
-  <li>나이별</li>
+	<li class="select" jControll="navBar" jData="ranking_1">레시피</li>
+	<li jControll="navBar" jData="ranking_2">셰프</li>
+	<li jControll="navBar" jData="ranking_3">나이별</li>
 </ul>
 
-<div class="searchArea">
-    <select class="form-control small left">
-        <option>전체</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-    </select>
+<ul class="rankingListArea" id="rankingListArea">
+  <LI>
+    <p class = "ranking">1위</p>
+    <div class="box">
+      <img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" class = "img" width="160px" height="160px"/>
 
-    <select class="form-control small left">
-        <option>전체</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-        <option>재료 명</option>
-    </select>
-
-    <input type="text" class="form-control small left">
-    <div class="btn small left">검색</div>
-</div>
-
-
-<ul class="listArea" id="listArea">
-
+      <div class = "info">
+        <p> 김보규님의 레시피</p>
+        <p> 김치볶음밥 </p>
+        <p> 예상 금액 : 10,000원 </p>
+      </div>
+    </div>
+  </LI>
 </ul>
 
 <script async type="text/javascript"  src="/js/ranking.js"></script>

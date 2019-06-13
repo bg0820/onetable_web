@@ -5,7 +5,7 @@
   overflow: hidden;
 }
 
-.listItemHeader > p, .listItemHeader > img {
+.listItemHeader > p {
   position: relative;
   color: #646464;
   float: left;
@@ -16,14 +16,6 @@
 .listItemContent {
   position: relative;
   overflow: hidden;
-}
-
-
-.imgWrap img {
-  float:left;
-  width: 100%;
-  height: auto;
-  max-height: 280px;
 }
 
 ul.rankingListArea {
@@ -53,10 +45,6 @@ ul.rankingListArea li {
   height: 100%;
   float: left;
   padding: 10px;
-}
-
-.rankingListArea li .box img {
-  float: left;
 }
 
 .rankingListArea li .box .info {

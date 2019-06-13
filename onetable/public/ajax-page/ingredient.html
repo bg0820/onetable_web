@@ -1,36 +1,34 @@
-
 <div class="searchArea ingredient">
-    <input type="text" class="form-control small left" id="ingredientSearchValue">
-    <div class="btn small left" id="ingredientSearhBtn">검색</div>
+  <select class="form-control small left" onchange="categoryChange(this)">
+    <option value = "a">전체</option>
+    <option value = "b">과일</option>
+    <option value = "c">채소</option>
+    <option value = "d">쌀/잡곡</option>
+    <option value = "e">견과/건해산물</option>
+    <option value = "f">정육/계란류</option>
+    <option value = "g">수산물/해산물</option>
+    <option value = "h">유제품/냉장/냉동/간편식</option>
+    <option value = "i">건강식품/친환경/유기농</option>
+    <option value = "j">라면/통조림/조미료/장류</option>
+    <option value = "k">과자/초콜릿/시리얼/빵</option>
+    <option value = "l">음료/주류/커피/분유</option>
+    <option value = "m">반찬/밀키트/델리</option>
+  </select>
+
+  <select class="form-control small left" id = "detail">
+    <option>전체</option>
+  </select>
+
+  <input type="text" class="form-control small left">
+  <div class="btn small left">검색</div>
 </div>
 
-<ul class="listArea" id="listArea">
-        <!--<li>
-                <div class="listItem">
-                    <div class="listItemContent">
-                        <div class="imgWrap">
-                            <img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66892/mid_thumb________.jpg&amp;convert=jpgmin&amp;rt=600">
-                        </div>
-                        <div class="info">
-                            <p class="title">알리오올리오</p>
-                            <div class="footerInfo">
-                                <p class="price">92,680원</p>
-                                <p class="createDate">2019.05.17</p>
-                            </div>
-                        </div>
 
-                    </div>
-                    <div class="wrapper"></div>
-                </div>
-            </li>-->
+<ul class="listArea" id="listArea">
+
 </ul>
 
 <script async type="text/javascript"  src="/js/ingredient.js"></script>
 <script async src="./js/chart.js"></script>
 <script async ssrc="./js/ingredientDetail.js"></script>
-
-<!--
-<a href="IngredientDetailView.html" onclick="window.open(this.href, '_blank', 'width=450px,height=400px,toolbars=no,scrollbars=no'); return false;">
-  재료 시가
-</a>
--->
+<script async src="./js/ingredientCategory.js"></script>
