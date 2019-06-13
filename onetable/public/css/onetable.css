@@ -1,6 +1,9 @@
+
 .navBar {
     list-style: none;
-    height: 35px;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
 }
 
 .navBar::after{
@@ -63,7 +66,7 @@
 }
 
 .sL .searchResultList {
-	height: 300px;
+	max-height: 400px;
 	width: 370px;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -72,11 +75,7 @@
 	border-style: solid;
 }
 
-.searchResultList ul {
-	list-style: none;
-}
-
-.searchResultList ul li {
+.searchResultList .item {
 	height: 60px;
 	width: 360px;
 	line-height: 60px;
@@ -84,18 +83,25 @@
 	border-width: 0px 0px 1px 0px;
 	border-color: #eee;
 	border-style:solid;
+	background: #fff;
 }
 
-.searchResultList ul li > * {
+.searchResultList .item img {
+	width: 50px;
+	height: 50px;
+}
+
+.searchResultList .item .price {
+	float: right;
+}
+
+.searchResultList .item > * {
 	float: left;
 	margin-right: 10px;
 }
 
-.sR .totalPrice {
-	position: relative;
-	margin-top:20px;
-	color: #949494;
-	font-size: 1.3rem;
+.sR.center {
+	flex-direction: column;
 }
 
 .sR .dropWrap {
@@ -120,16 +126,39 @@
 .dropArea .circle {
 	width:100%;
 	height:100%;
-	line-height: 100%;
 	border-radius: 50%;
 	border: 3px dotted #ccc;
 	text-align: center;
-	color: #ccc;
-	font-size: 1.5rem;
+	font-weight: 600;
+	font-size: 5rem;
 }
 
 .onetableBtn {
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
+}
+
+
+.dropArea .circle .dropzone {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.dropzone .item {
+	position: absolute;
+}
+
+.dropzone .item img {
+	width: 80px;
+	height: 80px;
+}
+
+.dropzone .item p {
+	color: #7B6FF7;
+}
+
+.dropArea canvas {
+	opacity: 0.3;
 }

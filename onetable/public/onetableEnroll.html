@@ -9,7 +9,7 @@
 
         <script src="./js/jquery-3.4.1.min.js"></script>
         <script src="./js/main.js"></script>
-        
+		<script src="./js/onetable.js"></script>
         <title>한상 차림</title>
     </head>
     <body>
@@ -50,7 +50,7 @@
             <div class="splitRight">
                 <div class="userInfo" jControll='contextMenu'>
                     <img src="/img/user.svg" width="40px" height="40px"/>
-                    <p>bg0820 님</p>
+                    <p id="nicknameInfo"> 님</p>
                     <ul id="contextMenu">
                         <li jControll="menuLink" jData="myPage">마이페이지</li>
                         <li jControll="menuLink" jData="favorite">즐겨찾기</li>
@@ -75,47 +75,16 @@
 						
 					<div class="onetable_split">
 						<div class="sL">
-							<input id="recipeSearhValue" type="text" class="form-control small onetableInput" placeholder="한상의 이름을 적어주세요">
+							<input id="onetableTitle" type="text" class="form-control small onetableInput" placeholder="한상의 이름을 적어주세요">
 					
 							<div class="recipeSearchArea">
-								<input id="recipeSearhValue" type="text" class="form-control small left onetableInput" placeholder="레시피 검색">
+								<input id="recipeSearchValue" type="text" class="form-control small left onetableInput" placeholder="레시피 검색">
 								<div id="recipeSearhBtn" class="btn small left">검색</div>
 							</div>
 							<div class="searchResultList">
-								<ul>
-									<li draggable="true">
-										<img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" width="50px" height="50px">
-										<p>ㅇㅇㅇ님의 김치찌개</p>
-									</li>
-									<li>
-										<img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" width="50px" height="50px">
-										<p>ㅇㅇㅇ님의 김치찌개</p>
-									</li>
-									<li>
-										<img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" width="50px" height="50px">
-										<p>ㅇㅇㅇ님의 김치찌개</p>
-									</li>
-									<li>
-										<img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" width="50px" height="50px">
-										<p>ㅇㅇㅇ님의 김치찌개</p>
-									</li>
-									<li>
-										<img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" width="50px" height="50px">
-										<p>ㅇㅇㅇ님의 김치찌개</p>
-									</li>
-									<li>
-										<img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" width="50px" height="50px">
-										<p>ㅇㅇㅇ님의 김치찌개</p>
-									</li>
-									<li>
-										<img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" width="50px" height="50px">
-										<p>ㅇㅇㅇ님의 김치찌개</p>
-									</li>
-									<li>
-										<img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" width="50px" height="50px">
-										<p>ㅇㅇㅇ님의 김치찌개</p>
-									</li>
-								</ul>
+								<div id="searchResultList">
+									
+								</div>
 							</div>	
 							
 							
@@ -124,18 +93,18 @@
 							<div class="dropWrap ">
 								<div class="dropArea">
 									<div class="circle center">
-										왼쪽의 레시피를 여기로 드래그해주세요.
+										<canvas width="350px" height="100px" id="totalPrice"></canvas>
+										<div class="dropzone" isDropzone="true">
+											
+										</div>
 									</div>
 								</div>
-								<p class="totalPrice">
-									현재 총 금액 : 11,220원
-								</p>
+								
 							</div>
-							
 						</div>
 					</div>
 					
-					<div class="btn small onetableBtn">
+					<div class="btn small onetableBtn" id="ontableEnrollBtn">
 						등록
 					</div>
                 </div>

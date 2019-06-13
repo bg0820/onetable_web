@@ -1,73 +1,4 @@
-/********************************
-        Silder
-********************************/
 
-.popularSlideWrap {
-    position: relative;
-    overflow: hidden;
-}
-.popularSlide {
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: nowrap;
-    width: 100%;
-    font-size: 0;
-}
-
-
-.leftIcon {
-    position: absolute;
-	top: 13px;
-	left: 16px;
-	border: solid #fff;
-	border-width: 0px 0px 3px 3px;
-	transform: rotate(45deg);
-	width:15px;
-	height: 15px;
-}
-
-.rightIcon {
-    position: absolute;
-	top: 13px;
-	right: 16px;
-	border: solid #fff;
-	border-width: 0px 0px 3px 3px;
-	transform: rotate(225deg);
-	width:15px;
-	height: 15px;
-}
-
-.popularSlideWrap .leftBtn, .popularSlideWrap .rightBtn  {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    top: 130px;
-    cursor: pointer;
-}
-
-.popularSlideWrap .leftBtn {
-    left: 15px;
-}
-
-.popularSlideWrap .rightBtn {
-    right : 15px;
-}
-
-.popularSlide .item {
-    display:inline-block;
-    width: 20%;
-    padding: 0.5em;
-}
-
-
-@media all and (max-width: 1300px) {
-    .popularSlide .item {
-        width: 25%;
-    }
-}
 
 @media all and (max-width: 900px) {
     .content .splitLeft{
@@ -94,7 +25,7 @@
 .content {
     display:flex;
     flex-direction: row;
-    height: 100%;
+    min-height: 100%;
 }
 
 .content::after {
@@ -107,9 +38,8 @@
     flex: 2;
     min-width: 180px;
 	max-width: 230px;
-	background: linear-gradient( #7B6FF7, #E85E6B);
-	/*
-    background: #98cfc4;*/
+	background: linear-gradient( #7B6FF7, rgba(202,106, 173));
+	/* background: #98cfc4;*/
 }
 
 .splitLeft ul {

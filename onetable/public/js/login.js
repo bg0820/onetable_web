@@ -14,8 +14,14 @@ window.onclick = function(event) {
             };
 
             serverRequest('http://1.240.181.56:8080/auth/login', 'POST', parm).then(function(result) {
-                if(result.status == 'SUCCESS')
-                    location.href="/main.html"
+                if(result.status == 'SUCCESS') {
+					sessionStorage.setItem("login", "true");
+					sessionStorage.setItem("userIdx", result.data.userIdx);
+					sessionStorage.setItem("token", result.data.token);
+					sessionStorage.setItem("nickname", result.data.nickname);
+
+					location.href="/main.html"
+				}
                 else
                     $('#loginError').text(result.msg);
             });

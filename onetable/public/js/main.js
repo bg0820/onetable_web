@@ -1,3 +1,13 @@
+$(document).ready(function() {
+	if(sessionStorage.getItem('login') == null)
+	{
+		location.href = 'login.html';
+		return;
+	}
+
+	$('#nicknameInfo').text(sessionStorage.getItem("nickname") + " 님");
+})
+
 
 var contextVisible = false;
 
@@ -25,7 +35,10 @@ window.onclick = function(event) {
    
     switch (jControll) {
         case 'menuLink':
-            menuLink(jData);
+			if(jData ==='myPage')
+				location.href="mypage.html";
+			else if(jData === 'favorite')
+				location.href="favorite.html";
 
             break;
         case 'contextMenu':
@@ -142,6 +155,27 @@ async function initModal(_url, _data) {
     document.getElementById('modal').innerHTML = modalResult;
 }
 
+async function serverRequestBody(url, method, param)
+{
+    return new Promise(function(resolve, reject) {
+        $.ajax({
+            url: url, // 요청 할 주소
+            async: false, // false 일 경우 동기 요청으로 변경
+            headers: {'API_Version': '1.0'},
+            type: method, // GET, PUT
+			data: param, // 전송할 데이터
+			contentType: "application/json; charset=utf-8",
+			processData: true,
+            dataType: 'json', // xml, json, script, html
+                success: function(result) {
+                    resolve(result);
+                }, // 요청 완료 시
+                error: function(error) {
+                    resolve(error.responseJSON);
+                } // 요청 실패
+        });
+    });    
+}
 
 
 async function serverRequest(url, method, param, dataType)
@@ -152,7 +186,7 @@ async function serverRequest(url, method, param, dataType)
             async: false, // false 일 경우 동기 요청으로 변경
             headers: {'API_Version': '1.0'},
             type: method, // GET, PUT
-            data: param, // 전송할 데이터
+			data: param, // 전송할 데이터
             dataType: dataType, // xml, json, script, html
                 success: function(result) {
                     resolve(result);
