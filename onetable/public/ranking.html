@@ -1,100 +1,197 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./css/main.css" rel="stylesheet" type="text/css" />
-        <link href="./css/common.css" rel="stylesheet" type="text/css" />
-		<link href="./css/ranking.css" rel="stylesheet" type="text/css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./css/main.css" rel="stylesheet" type="text/css" />
+  <link href="./css/common.css" rel="stylesheet" type="text/css" />
+  <link href="./css/ranking.css" rel="stylesheet" type="text/css" />
 
-        <script src="./js/jquery-3.4.1.min.js"></script>
-        <script src="./js/main.js"></script>
-        
-        <title>한상 차림</title>
-    </head>
-    <body>
-        <div class="modalBack flexcenter" id="modalBack">
-            <div class="modal" id="modal"></div>
-        </div>
+  <script src="./js/jquery-3.4.1.min.js"></script>
+  <script src="./js/main.js"></script>
 
-        <div class='content'>
-            <div class="splitLeft">
-				<ul>
-					<li>
-						<a href="main.html">
-							<span class="I_HOME"></span><p>홈</p>
-						</a>
-					</li>
-					<li>
-						<a href="ingredientSearch.html">
-							<span class="I_INGREDIENT"></span><p>재료 가격</p>
-						</a>
-					</li>
-					<li>
-						<a href="recipeSearch.html">
-							<span class="I_RECIPE"></span><p>레시피</p>
-						</a>
-					</li>
-					<li> 
-						<a href="onetableEnroll.html">
-							<span class="I_ONETABLE"></span><p>한상차림</p>
-						</a>
-					</li>
-					<li  class="select">
-						<a href="ranking.html">
-							<span class="I_RANKING"></span><p>랭킹</p>
-						</a>
-					</li>
-				</ul>
+  <title>한상 차림</title>
+</head>
+<body>
+  <div class="modalBack flexcenter" id="modalBack">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <div class='content'>
+    <div class="splitLeft">
+      <ul>
+        <li>
+          <a href="main.html">
+            <span class="I_HOME"></span><p>홈</p>
+          </a>
+        </li>
+        <li>
+          <a href="ingredientSearch.html">
+            <span class="I_INGREDIENT"></span><p>재료 가격</p>
+          </a>
+        </li>
+        <li>
+          <a href="recipeSearch.html">
+            <span class="I_RECIPE"></span><p>레시피</p>
+          </a>
+        </li>
+        <li>
+          <a href="onetableEnroll.html">
+            <span class="I_ONETABLE"></span><p>한상차림</p>
+          </a>
+        </li>
+        <li  class="select">
+          <a href="ranking.html">
+            <span class="I_RANKING"></span><p>랭킹</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="splitRight">
+      <div class="userInfo" jControll='contextMenu'>
+        <img src="/img/user.svg" width="40px" height="40px"/>
+        <p>bg0820 님</p>
+        <ul id="contextMenu">
+          <li jControll="menuLink" jData="myPage">마이페이지</li>
+          <li jControll="menuLink" jData="favorite">즐겨찾기</li>
+          <li jControll="contextMenu" jData="logout" class="logout">로그아웃</li>
+        </ul>
+      </div>
+
+      <div class="container" id='content'>
+
+        <ul class="navBar">
+          <li class="select">
+            <a href="ranking.html">
+              레시피별
+            </a>
+          </li>
+          <li>
+            <a href="rankingChief.html">
+              셰프별
+            </a>
+          </li>
+          <li  >
+            <a href="rankingAge.html">
+              나이별
+            </a>
+          </li>
+        </ul>
+        <ul class="rankingListArea" id="rankingListArea">
+          <li>
+            <p class = "ranking">1위</p>
+            <div class="box">
+              <img src="http://recipe1.ezmember.co.kr/cache/recipe/2015/06/08/fa3cd1800838bf561ea00b7552e9866a.jpg" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 김치볶음밥 </p>
+                <p> 예상 금액 : 5,355원 </p>
+              </div>
             </div>
-            <div class="splitRight">
-                <div class="userInfo" jControll='contextMenu'>
-                    <img src="/img/user.svg" width="40px" height="40px"/>
-                    <p id="nicknameInfo"> 님</p>
-                    <ul id="contextMenu">
-                        <li jControll="menuLink" jData="myPage">마이페이지</li>
-                        <li jControll="menuLink" jData="favorite">즐겨찾기</li>
-                        <li jControll="contextMenu" jData="logout" class="logout">로그아웃</li>
-                    </ul>
-                </div>
-                
-                <div class="container" id='content'>
-      
-					<ul class="navBar">
-						<li class="select">
-							<a href="ranking.html">
-								레시피별
-							</a>
-						</li>
-						<li>
-							<a href="rankingChief.html">
-								셰프별
-							</a>
-						</li>
-						<li  > 
-							<a href="rankingAge.html">
-								나이별
-							</a>
-						</li>
-					</ul>
+          </li>
+          <li>
+            <p class = "ranking">2위</p>
+            <div class="box">
+              <img src="img/pic1.png" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 고추기름 묵볶이 </p>
+                <p> 예상 금액 : 5,662원 </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class = "ranking">3위</p>
+            <div class="box">
+              <img src="img/pic2.png" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 차돌파스타 </p>
+                <p> 예상 금액 : 8,362원 </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class = "ranking">4위</p>
+            <div class="box">
+              <img src="img/pic3.png" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 참치 라자냐 </p>
+                <p> 예상 금액 : 5,951원 </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class = "ranking">5위</p>
+            <div class="box">
+              <img src="img/pic4.png" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 베이컨 맛탕 </p>
+                <p> 예상 금액 : 6,516원 </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class = "ranking">6위</p>
+            <div class="box">
+              <img src="img/pic5.jpg" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 감자 고로케 </p>
+                <p> 예상 금액 : 3,861원 </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class = "ranking">7위</p>
+            <div class="box">
+              <img src="img/pic6.jpg" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 오렌지 푸딩 </p>
+                <p> 예상 금액 : 2,899원 </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class = "ranking">8위</p>
+            <div class="box">
+              <img src="img/pic7.jpg" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 김치 목살 찜 </p>
+                <p> 예상 금액 : 8,432원 </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class = "ranking">9위</p>
+            <div class="box">
+              <img src="img/pic8.jpg" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 전복장 </p>
+                <p> 예상 금액 : 10,532원 </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class = "ranking">10위</p>
+            <div class="box">
+              <img src="img/pic9.jpg" class = "img" width="160px" height="160px"/>
+              <div class = "info">
+                <p> SYSTEM 님의 레시피</p>
+                <p> 참치계란볶음밥 </p>
+                <p> 예상 금액 : 6,522원 </p>
+              </div>
+            </div>
+          </li>
+        </ul>
 
-					<div class="rankingListArea">
-						<div class="rankingList">
-							<div class="rankingItem">
-								<div class="rankNum">
-									1위
-								</div>
-								<div class="rankInfo">
-									<img src="http://item.ssgcdn.com/21/32/04/item/1000017043221_i1_290.jpg">
-									<div class="info">
-										asddas
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
