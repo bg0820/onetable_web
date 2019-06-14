@@ -5,14 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="./css/main.css" rel="stylesheet" type="text/css" />
         <link href="./css/common.css" rel="stylesheet" type="text/css" />
-		<link href="./css/recipe_ingredient.css" rel="stylesheet" type="text/css" />
+		<link href="./css/recipeEnroll.css" rel="stylesheet" type="text/css" />
 
         <script src="./js/jquery-3.4.1.min.js"></script>
         <script src="./js/main.js"></script>
-        
+        <script src="./js/recipeEnroll.js"></script>
         <title>한상 차림</title>
     </head>
     <body>
+		<div class="ingredientSearchList" id="ingredientSearchList">
+			
+		</div>
         <div class="modalBack flexcenter" id="modalBack">
             <div class="modal" id="modal"></div>
         </div>
@@ -77,8 +80,66 @@
 						</li>
 					</ul>
 					<div id="subContent" class="subContent">
-						
+						<!--<p class="item_title_big">레시피 등록</p> -->
+						<table class="enroll">
+							<!--<tr>
+								<td class="desc">제목 입력하기</td>
+								<td>
+									<input class="form-control medium" placeholder="레시피의 제목을 입력해주세요"/>
+								</td>
+							</tr> -->
+							<tr>
+								<td class="bigdesc">음식 정보</td>
+							</tr>
+							<tr class="food_name">
+								<td class="desc">음식 이름 및 인분</td>
+								<td>
+									<input id="recipeName" class="form-control medium" placeholder="음식명을 입력해주세요."/>
+									<div class="wrap">
+										<input id="servingMin" class="form-control medium" placeholder="조리분량"/>
+									</div>	
+									<div class="wrap">
+										<input id="kcal" class="form-control medium" placeholder="칼로리"/>
+									</div>									
+								</td>
+							</tr>
 
+							<tr>
+								<td class="bigdesc">음식 재료</td>
+							</tr>
+							<tr class="ingredient" name="ingredientItem">
+								<td>
+									
+								</td>
+								<td>
+									<input class="form-control medium ingredient_name" name="ingredient" placeholder="재료 이름 을 입력해주세요."/>
+									<div class="wrap">
+										<input class="form-control medium" placeholder="재료의 양"/>
+									</div>
+									<div class="wrap">
+										<select class="form-control medium" name="unit" value="재료의 단위">
+
+										</select>
+									</div>
+									<div class="wrap_small">
+										<div class="addBtn" jControll="addIngredient">+</div>
+									</div>
+								</td>
+							</tr>
+							
+							<tr id="recipeMethod">
+								<td class="bigdesc">요리 방법</td>
+							</tr>
+						</table>
+						<div class="imgUpload">
+							<input type='file' hidden="true" name='imgFile' id='imgFile' accept=".png, .jpg, .jpeg"></input>
+							<label class="labelBtn" for="imgFile">
+								<p>요리 방법 추가 및 이미지 업로드</p>
+							</label>
+						</div>
+
+
+						<div id="recipeEnrollBtn" class="btn large margin_top" style="margin-top:50px;">레시피 등록</div>
 					</div>			
                 </div>
             </div>

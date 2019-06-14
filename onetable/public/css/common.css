@@ -87,6 +87,14 @@ html, body {
 	max-width: 350px;
 }
 
+
+textarea {
+	line-height: normal;
+	resize: none;
+	line-height: inherit;
+	padding: 10px;
+}
+
 .flexcenter {
 	display: flex;
 	justify-content: center;

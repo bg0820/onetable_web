@@ -1,7 +1,9 @@
 
 .navBar {
     list-style: none;
-    height: 35px;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
 }
 
 .navBar::after{
@@ -12,52 +14,193 @@
 
 .navBar li {
     float: left;
-    color: #ccc;
-    font-size: 1.6rem;
+    
     margin-right: 20px;
+    cursor: pointer;
 }
 
-.navBar li.select {
-    color: #74cebd;
+.navBar li a {
+	color: #ccc;
+    font-size: 1.6rem;
+}
+
+.navBar li.select a {
+    color: rgba(123,111,247);
     font-weight: bold;
 }
 
 
-h4 {
-    font-size:20px;
+.subContent {
+	width: 60vw;
+	margin: 0 auto;
+	
 }
 
-ul, li {
- list-style:none;   
+.enroll {
+	table-layout: fixed;
+	border: 0;
+	border-collapse: collapse;
+	width: 100%;
 }
 
-.cont_box .cont_tit4 {
-    width: 140px;
+.enroll tr {
+	width:100%;
+	height: 80px;
+}
+
+.enroll td {
+	
+}
+
+.enroll td.desc {
+	padding-left: 20px;
+	color: #949494;
+	font-size: 1.6rem;
+	font-weight: 600;
+	width: 210px;
+}
+
+.enroll td.bigdesc {
+	width: 220px;
+	font-size: 2.3rem;
+	font-weight: 600;
+	color: #7B6FF7;
+}
+
+.enroll tr.food_name td > input{
+	width: 50%;
+	float:left;
+}
+
+.enroll tr.food_name .wrap {
+	width: 25%;
+	float: left;
+	padding-left: 10px;
+}
+
+
+.enroll .ingredient_name {
+	width: calc(50% - 45px);
+	float: left;
+}
+
+.wrap {
+	width: 25%;
+	float: left;
+	padding-left: 10px;
+}
+
+.wrap_small {
+	width: 45px;
+	float:left;
+	padding-left: 10px;
+}
+
+.item_title_big {
+	color: #7B6FF7;
+	font-weight: 600;
+	font-size: 2.5rem;
+	white-space: nowrap;
+	margin-top: 45px;
+	margin-bottom: 15px;
+	height: 40px;
+	line-height: 40px;
+}
+
+tr.ingredient {
+	height: 55px;
+}
+
+.ingredient .addBtn {
+	width: 45px;
+	height: 45px;
+	background: #839705;
+	border-radius: 50%;
+	line-height: 50px;
+	text-align: center;
+	font-size: 2.5rem;
+	color: white;
+	cursor: pointer;
+}
+
+.ingredientSearchList {
+	display: none;
+	z-index: 100;
+	position: absolute;
+	left: 400px;
+	top: 300px;
+	width: 360px;
+	max-height: 200px;
+	background : white;
+	border: 1px solid #ccc;
+	
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.ingredientSearchList .item {
+	position: relative;
+	width: 100%;
+	padding: 10px;
+	line-height: 50px;
+	display:inline-block;
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+}
+
+.ingredientSearchList .item img {
+	width: 50px;
+	height: 50px;
+	float:left;
+}
+
+.ingredientSearchList .item p {
+	float:left;
+	width: calc(100% - 50px);
+	white-space:nowrap;
+	word-break: break-all;
+	text-overflow:ellipsis;
+}
+
+tr.recipeMethod {
+	height: 180px;
+	overflow: hidden;
+}
+
+tr.recipeMethod img{
+	width:100%;
+	height:180px;
+	position: relative;
+	border: 1px solid #ccc;
+}
+
+.imgUpload .labelBtn {
+	margin-top:10px;
+	position: relative;
+    width: 100%;
+	height: 60px;
+	border: 1px solid #7B6FF7;
+    background: #fff;
+    color: #7B6FF7;
     display: inline-block;
-    font-size: 20px;
-    font-weight: normal;
-    vertical-align: top;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
 }
 
-.cont_line input {
-    display: inline-block;
+.imgUpload .labelBtn:hover {
+    background: #7B6FF7;
+    color: #fff;
 }
 
-.pad_l_60 {
-    padding-left: 60px !important;
+tr.recipeMethod  .method{
+	float:left;
+	flex: 1;
+	padding-left: 10px;
+	height: 100%;
+	width: 100%;
 }
 
-.cont_box {
-    padding: 26px 30px;
-    border-bottom: 10px; 
-    margin: 0 -1px;
-}
-
-.cont_line {
-    width: 800px;
-    padding: 8px 0 0 0;
-}
-
-.regi_center {
-    display: inline-block;
+.method textarea {
+	height: 180px;
 }

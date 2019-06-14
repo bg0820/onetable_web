@@ -79,7 +79,8 @@ ul.rankingListArea li {
 
 .navBar {
     list-style: none;
-    height: 35px;
+	height: 40px;
+	line-height: 40px;
 }
 
 .navBar::after{
@@ -103,4 +104,45 @@ ul.rankingListArea li {
 .navBar li.select a {
     color: rgba(123,111,247);
     font-weight: bold;
+}
+
+.rankingListArea {
+	margin-top: 40px;
+}
+
+.rankingList {
+	width: 100%;
+	height: 100%;
+	
+}
+.rankingItem {
+	height: 200px;
+	width: 100%;
+}
+
+.rankingItem .rankNum {
+	float: left;
+	width: 20%;
+	line-height: 200px;
+	text-align: center;
+	color: rgba(123,111,247);
+	font-size: 2.5rem;
+}
+
+.rankingItem .rankInfo {
+	float: left;
+	width: 80%;
+	padding: 20px;
+	border: 1px solid #ccc;
+	height: 100%;
+}
+
+.rankInfo img {
+	width: 150px;
+	height: 100%;
+	float:left;
+}
+
+.rankInfo .info {
+	float:left;
 }

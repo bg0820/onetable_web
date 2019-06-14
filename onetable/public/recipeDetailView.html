@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/main.css" rel="stylesheet" type="text/css" />
+        <link href="./css/common.css" rel="stylesheet" type="text/css" />
+		<link href="./css/recipe_ingredient.css" rel="stylesheet" type="text/css" />
+		<link href="./css/recipeDetail.css" rel="stylesheet" type="text/css" />
+
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/main.js"></script>
+		<script src="./js/recipeDetail.js"></script>
+
+        <title>한상 차림</title>
+    </head>
+    <body>
+        <div class="modalBack flexcenter" id="modalBack">
+            <div class="modal" id="modal"></div>
+        </div>
+
+        <div class='content'>
+            <div class="splitLeft">
+				<ul>
+					<li>
+						<a href="main.html">
+							<span class="I_HOME"></span><p>홈</p>
+						</a>
+					</li>
+					<li>
+						<a href="ingredientSearch.html">
+							<span class="I_INGREDIENT"></span><p>재료 가격</p>
+						</a>
+					</li>
+					<li class="select">
+						<a href="recipeSearch.html">
+							<span class="I_RECIPE"></span><p>레시피</p>
+						</a>
+					</li>
+					<li>
+						<a href="onetableEnroll.html">
+							<span class="I_ONETABLE"></span><p>한상차림</p>
+						</a>
+					</li>
+					<li>
+						<a href="ranking.html">
+							<span class="I_RANKING"></span><p>랭킹</p>
+						</a>
+					</li>
+				</ul>
+            </div>
+            <div class="splitRight">
+                <div class="userInfo" jControll='contextMenu'>
+                    <img src="/img/user.svg" width="40px" height="40px"/>
+					<p id="nicknameInfo"> 님</p>
+                    <ul id="contextMenu">
+                        <li jControll="menuLink" jData="myPage">마이페이지</li>
+                        <li jControll="menuLink" jData="favorite">즐겨찾기</li>
+                        <li jControll="contextMenu" jData="logout" class="logout">로그아웃</li>
+                    </ul>
+                </div>
+                
+                <div class="container">
+					<ul class="navBar">
+						<li class="select">
+							<a href="recipeSearch.html">
+								검색
+							</a>
+						</li>
+						<li>
+							<a href="recipeEnroll.html">
+								등록
+							</a>
+						</li>
+						<li>
+							<a href="recipeHistory.html">
+								히스토리
+							</a>
+						</li>
+					</ul>
+					<div id="subContent" class="subContent">
+						
+						<div class="contentArea">
+								<div class="sUp">
+										<div class="sLeft">
+												<div class="user_recipe">이아현 님의 "  </div>
+												<div class="user_recipe">제육볶음</div>"
+												<img src="//img-cf.kurly.com/shop/data/goods/1554104031692l0.jpg" />
+												
+										
+											</div>
+										
+											<div class="sRight">
+										
+												<div class="recipe_price">총 레시피 금액 : <span id="" class="total_price">12,500</span>원
+										
+													<dl class="recipe_information">
+															<dt class="recipe_serving">인분</dt>
+															<dd>2인분</dd>
+															<dt class="recipe_time">조리시간</dt>
+															<dd>15분</dd>
+															<dt class="recipe_kcal">칼로리</dt>
+															<dd>750kcal</dd>
+														</dl>
+														
+												</div>
+										
+											</div>
+								</div>
+								
+								<div class="sDown" align="center">
+										<table class="ingredient_information">
+												<thead>
+													<tr>
+														<td>재료</td>
+														<td>양(g)</td>
+														<td>가격</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>양파</td>
+														<td>200</td>
+														<td>3300</td>
+													</tr>
+													<tr>
+														<td>마늘</td>
+														<td>50</td>
+														<td>2000</td>
+													</tr>
+													<tr>
+														<td>돼지고기</td>
+														<td>200</td>
+														<td>4500</td>
+													</tr>
+													<tr>
+														<td>간장</td>
+														<td>30</td>
+														<td>1000</td>
+													</tr>
+													<tr>
+														<td>고추장</td>
+														<td>30</td>
+														<td>1500</td>
+													</tr>
+												</tbody>
+											</table>
+							
+										'<li> 
+												<div class="img-cover"> 
+												<img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66730/org_resized_____2019-01-29-19-03-49.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 19 03 49"> 
+												</div> <p>매운 고추장 제육볶음 부재료를 갈아 밑간 후 양념을 섞어서 맛이 깊고 화끈하게 매운 제육볶음이예요</p> </li> 
+											<li> 
+												<div class="img-cover"> 
+												<img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66731/org_resized_____2019-01-29-18-09-50.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 09 50"> 
+												</div> <p>믹서기에 갈 재료는 큼직하게 썰고 사과는 씨 제거 후 껍질째 사용합니다</p> </li> 
+											<li> 
+												<div class="img-cover"> 
+												<img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66732/org_resized_____2019-01-29-18-18-02.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 18 02"> 
+												</div> <p>썬 재료는 믹서기에 넣고 맛술2 진간장 2스푼을 넣고 믹서기에 곱게 갈아주세요</p> </li> 
+											<li> 
+												<div class="img-cover"> 
+												<img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66733/org_resized_____2019-01-29-18-19-40.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 19 40"> 
+												</div> <p>돼지고기 앞다릿살은 볼에 넣고 간 재료를 넣고 버무린 후 약 10분 정도 간이 배게 두세요</p> </li> 
+											<li> 
+												<div class="img-cover"> 
+												<img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66734/org_resized_____2019-01-29-18-48-11.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 48 11"> 
+												</div> <p>10분 후 양념 재료를 넣고 골고루 버무립니다</p> </li> 
+											<li> 
+												<div class="img-cover"> 
+												<img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66735/org_resized_____2019-01-29-18-58-40.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 18 58 40"> 
+												</div> <p>팬을 뜨겁게 달궈주세요 여기에 양념한 고기를 넣고 빠르게 타지 않게 볶아주고 불은 중불로 줄이고 고기를 익혀줍니다</p> </li> 
+											<li> 
+												<div class="img-cover"> 
+												<img src="https://cloudfront.haemukja.com/vh.php?url=https://d1hk7gw6lgygff.cloudfront.net/uploads/direction/image_file/66736/org_resized_____2019-01-29-19-04-12.jpg&amp;convert=jpgmin&amp;rt=600" alt="Org resized     2019 01 29 19 04 12"> 
+												</div> <p>화끈하고 맛있게 매운 제육볶음 완성입니다~</p> </li>'
+								
+								</div>
+								<div class="view_reply">
+									<div class="reply_tit">
+									댓글
+									</div>
+									<p class="star_grade_1">
+										<span class="stars">
+											<span class="percent_average_comp" average="100" style="width:100%;"></span>
+										</span>
+										<span class="total_num">5.0</span>
+										</p>
+									<div class="reply_write">
+									<div class="input_group" style="width :680px;">
+										<textarea id="cmt_tx_content1" onclick="EZ.ATLogin(); return false;" name="frm[cmt_tx_content]" class="form-control" placeholder="댓글을 남겨주세요." style="height:100px;width:100%; resize:none; float:left;"></textarea>
+										<span class="input-group-btn" style:10%;>
+										</span>
+									</div>
+									<button class="btn btn_reply" type="button" onclick="doCommentSubmit(1)" style="height:100px; width:100px; float:left;">등록</button>
+									</div>
+									<div id="re_reply_div" style="display:none;">
+									</div>
+								</div>
+							
+					</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

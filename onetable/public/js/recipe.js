@@ -22,6 +22,7 @@ $(document).ready(function() {
 		type = 'search';
 		getRecipeList();
 	});
+
 });
 
 function getRecipeList() {
@@ -59,7 +60,7 @@ function addItem(data) {
 	var recipeDate = getFormdate(new Date(data.priceDate), 'min');
 
   	var listItemHTML = "";
-	listItemHTML += "<li>";
+	listItemHTML += "<li >";
     listItemHTML += "<div class='listItem'>";
     listItemHTML += "<div class='listItemHeader'>";
     listItemHTML += "<img src='img/user.svg' width='32px' height='32px'/>";
@@ -77,11 +78,17 @@ function addItem(data) {
     listItemHTML += "</div>";
     listItemHTML += "</div>";
     listItemHTML += "</div>";
-    listItemHTML += "<div class='wrapper'></div>";
+    listItemHTML += "<div class='wrapper' onclick='recipeDetail(\"" + data.recipeIdx + "\")'></div>";
     listItemHTML += "</div>";
     listItemHTML += "</li>";
 
 	return listItemHTML;
+}
+
+function recipeDetail(recipeIdx)
+{
+	sessionStorage.setItem('viewRecipeIdx', recipeIdx);
+	location.href	=	"recipeDetailView.html";
 }
 
 
